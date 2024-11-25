@@ -165,6 +165,12 @@ pub enum DatePrecision {
     Day,
 }
 
+// Track that is locally synced on users device
+#[derive(Clone, Debug, Deserialize, PartialEq)]
+pub struct LocalTrack {
+    id: Option<String>
+}
+
 /// An item that can be played.
 #[derive(Clone, Debug, Deserialize, PartialEq)]
 #[serde(untagged)]
@@ -173,6 +179,8 @@ pub enum PlayableItem {
     Track(track::Track),
     /// An episode of a show.
     Episode(show::Episode),
+    /// Locally saved track
+    Local(LocalTrack),
 }
 
 // A function to convert a "null" JSON value to the default of given type,
