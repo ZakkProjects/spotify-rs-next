@@ -86,7 +86,7 @@ pub struct PlaylistItem {
     /// Whether or not this item is a local file.
     pub is_local: bool,
     /// The item itself.
-    pub track: PlayableItem,
+    pub track: Option<PlayableItem>,
 }
 
 /// A list of featured playlists.

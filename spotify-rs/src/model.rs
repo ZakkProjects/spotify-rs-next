@@ -168,6 +168,7 @@ pub enum DatePrecision {
 // Track that is locally synced on users device
 #[derive(Clone, Debug, Deserialize, PartialEq)]
 pub struct LocalTrack {
+    // Item id
     id: Option<String>
 }
 
